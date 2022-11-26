@@ -14,17 +14,17 @@ class Chat(models.Model):
         ordering = ('-create_date',)
 
     def __str__(self):
-        return self.mes_amount
+        return str(self.id)
 
 
 class Message(models.Model):
-    chat_id = models.ForeignKey(Chat, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='')
+    chat_id = models.ForeignKey(Chat, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Номер чата')
     sent_from = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='sent_from_message', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Отправлено от')
     sent_to = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='sent_to_message', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Отправлено кому')
-    text = models.CharField(max_length=400, default='Текст сообщения')
+    text = models.CharField(max_length=400, default='')
     sent_time = models.DateTimeField(auto_now_add=True, verbose_name='Время отправки')
     is_delivered = models.BooleanField(default=False)
-    is_read = models.DateTimeField(default=False, verbose_name='Прочитано или нет')
+    is_read = models.BooleanField(default=False, verbose_name='Прочитано или нет')
 
     def __str__(self):
         return f'{self.sent_from} to {self.sent_to}'

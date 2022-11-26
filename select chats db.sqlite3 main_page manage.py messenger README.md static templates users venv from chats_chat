@@ -1,0 +1,22 @@
+                   List of relations
+ Schema |            Name             | Type  | Owner  
+--------+-----------------------------+-------+--------
+ public | auth_group                  | table | matvey
+ public | auth_group_permissions      | table | matvey
+ public | auth_permission             | table | matvey
+ public | auth_user                   | table | matvey
+ public | auth_user_groups            | table | matvey
+ public | auth_user_user_permissions  | table | matvey
+ public | chats_chat                  | table | matvey
+ public | chats_chat_members          | table | matvey
+ public | chats_message               | table | matvey
+ public | django_admin_log            | table | matvey
+ public | django_content_type         | table | matvey
+ public | django_migrations           | table | matvey
+ public | django_session              | table | matvey
+ public | users_user                  | table | matvey
+ public | users_user_chats            | table | matvey
+ public | users_user_groups           | table | matvey
+ public | users_user_user_permissions | table | matvey
+(17 rows)
+

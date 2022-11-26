@@ -22,5 +22,5 @@ urlpatterns = [
     path('messenger/', include('main_page.urls')),
     path('users/', include('users.urls')),
     path('chats/', include('chats.urls')),
-    path('main_page', include('main_page.urls'))
+    #path('main_page', include('main_page.urls'))
 ]

@@ -4,9 +4,9 @@ from chats.models import Chat, Message
 
 
 class ChatAdmin(admin.ModelAdmin):
-    list_display = ('is_group_chat', 'create_date')
     raw_id_fields = ('members',)
     search_fields = ('create_date',)
+    exclude = ('mes_amount', 'is_group_chat')
 
 
 class MessageAdmin(admin.ModelAdmin):
